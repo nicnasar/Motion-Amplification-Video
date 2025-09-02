@@ -1,5 +1,5 @@
 const dotenv = require('dotenv')
-const express = require('express')
+const express = require('express');
 const app = express()
 
 const cookieParser = require('cookie-parser')
@@ -13,6 +13,10 @@ require('./db/conn')
 app.use(express.json())
 
 app.use(require('./router/auth'))
+
+app.get('/', (req, res) => {
+  res.send('Backend está rodando!');
+});
 
 
 
